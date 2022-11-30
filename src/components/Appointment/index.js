@@ -1,4 +1,4 @@
-
+import 'components/Appointment/styles.scss'
 
 const Appointment = (props) => {
   
