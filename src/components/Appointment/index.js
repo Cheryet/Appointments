@@ -1,5 +1,4 @@
 import 'components/Appointment/styles.scss'
-import { Fragment } from 'react';
 import React from 'react';
 import Header from './Header';
 import Show from './Show';
