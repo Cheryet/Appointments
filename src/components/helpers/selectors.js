@@ -1,5 +1,5 @@
 
-
+//returns an array of appointments for the day
 export function getAppointmentsForDay(state, day) {
 
   let appointArr = []
@@ -14,6 +14,25 @@ export function getAppointmentsForDay(state, day) {
   })
 
   return appointArr;
+
+}
+
+//returns an array of Interviewers for day
+export function getInterviewersForDay(state, day) {
+
+  let interviewersArr = []
+
+  state.days.forEach((element) => {
+    if (element.name === day) {
+      element.appointments.forEach((interview) => {
+        if (state.interviewers[interview]){
+          interviewersArr.push(state.interviewers[interview])
+        }
+      })
+    }
+  })
+
+  return interviewersArr;
 
 }
 
