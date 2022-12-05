@@ -17,17 +17,21 @@ export function getAppointmentsForDay(state, day) {
 
 }
 
-//returns an array of Interviewers for day
+// returns an array of Interviewers for day
+
 export function getInterviewersForDay(state, day) {
 
   let interviewersArr = []
 
-  state.days.forEach((element) => {
-    if (element.name === day) {
-      element.appointments.forEach((interview) => {
-        if (state.interviewers[interview]){
-          interviewersArr.push(state.interviewers[interview])
-        }
+  //Find matching date
+  state.days.forEach((obj) => {
+    if (obj.name === day) {
+
+      //Pull interviewer ID's from array
+      obj.interviewers.forEach((interviewerID) => {
+
+        //Push interviewers Object from that day to a new array
+        interviewersArr.push(state.interviews[interviewerID])
       })
     }
   })
@@ -35,6 +39,8 @@ export function getInterviewersForDay(state, day) {
   return interviewersArr;
 
 }
+
+
 
 
 export function getInterview(state, interview) {
@@ -45,10 +51,12 @@ export function getInterview(state, interview) {
 
   let obj = {};
   obj.student = interview.student
-  obj.interviewer = state.interviewers[interview.interviewer]
+  obj.interviewer = state.interviews[interview.interviewer]
 
   return obj;
 
 
 
 }
+
+
