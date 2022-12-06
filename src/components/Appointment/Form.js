@@ -17,10 +17,11 @@ const Form = (props) => {
   //Resets on Cancel button event
   const cancel = () => {
     reset();
+    setError("");
     props.onCancel();
   };
 
-  //Validate function from testing
+  //Validates form is filled out
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
@@ -31,7 +32,7 @@ const Form = (props) => {
       setError("Please select an interviewer");
       return;
     }
-
+    setError("");
     props.onSave(student, interviewer);
   }
 
