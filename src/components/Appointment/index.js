@@ -33,10 +33,6 @@ const Appointment = (props) => {
       interviewer,
     };
 
-    // setTimeout(() => {
-    //   transition(SHOW);
-    // }, 1000);
-    // props.bookInterview(props.id, interview);
     transition(SAVING, true);
 
     props
@@ -51,11 +47,16 @@ const Appointment = (props) => {
 
   //Triggers delete function
   const onConfirm = () => {
-    setTimeout(() => {
-      transition(EMPTY);
-    }, 1000);
-    props.cancelInterview(props.id);
-    transition(DELETING);
+    transition(DELETING, true);
+
+    props
+      .cancelInterview(props.id)
+      .then(() => {
+        transition(EMPTY);
+      })
+      .catch(() => {
+        transition(ERROR_DELETE, true);
+      });
   };
 
   //Triggers Confirm page
@@ -111,6 +112,14 @@ const Appointment = (props) => {
       {mode === ERROR_SAVE && (
         <Error
           message={"Could not save appointment: Please try again"}
+          onClose={() => {
+            back();
+          }}
+        />
+      )}
+      {mode === ERROR_DELETE && (
+        <Error
+          message={"Could not delete appointment: Please try again"}
           onClose={() => {
             back();
           }}
