@@ -55,7 +55,7 @@ export default function Application(props) {
       [id]: appointment,
     };
 
-    Axios.put(`/api/appointments/${id}`, appointment).then(
+    return Axios.put(`/api/appointments/${id}`, appointment).then(
       setState({
         ...state,
         appointments,
@@ -77,12 +77,14 @@ export default function Application(props) {
       [id]: appointment,
     };
 
-    Axios.delete(`/api/appointments/${id}`).then(
-      setState({
-        ...state,
-        appointments,
-      })
-    );
+    return Axios.delete(`/api/appointments/${id}`)
+      .then(
+        setState({
+          ...state,
+          appointments,
+        })
+      )
+      .catch(setState({ ...state }));
   };
 
   //create an array of Interviewers for the selected day
