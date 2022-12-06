@@ -7,6 +7,7 @@ import useVisualMode from "hooks/useVisualMode";
 import Form from "./Form";
 import Status from "./Status";
 import Confirm from "./Confirm";
+import Error from "./Error";
 
 // ~ Appointment Component ~
 const Appointment = (props) => {
@@ -18,6 +19,8 @@ const Appointment = (props) => {
   const DELETING = "DELETING";
   const CONFIRM = "CONFIRMING";
   const EDIT = "EDIT";
+  const ERROR_SAVE = "ERROR_SAVE";
+  const ERROR_DELETE = "ERROR_DELETE";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -30,11 +33,20 @@ const Appointment = (props) => {
       interviewer,
     };
 
-    setTimeout(() => {
-      transition(SHOW);
-    }, 1000);
-    props.bookInterview(props.id, interview);
-    transition(SAVING);
+    // setTimeout(() => {
+    //   transition(SHOW);
+    // }, 1000);
+    // props.bookInterview(props.id, interview);
+    transition(SAVING, true);
+
+    props
+      .bookInterview(props.id, interview)
+      .then((res) => {
+        transition(SHOW);
+      })
+      .catch((error) => {
+        transition(ERROR_SAVE);
+      });
   }
 
   //Triggers delete function
@@ -94,6 +106,14 @@ const Appointment = (props) => {
           onSave={(student, interviewer) => save(student, interviewer)}
           student={props.interview.student}
           interviewer={props.interview.interviewer.id}
+        />
+      )}
+      {mode === ERROR_SAVE && (
+        <Error
+          message={"Could not save appointment: Please try again"}
+          onClose={() => {
+            back();
+          }}
         />
       )}
     </article>
