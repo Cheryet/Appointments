@@ -61,12 +61,29 @@ export default function Application(props) {
         appointments,
       })
     );
-
-    setState({
-      ...state,
-      appointments,
-    });
   }
+
+  //Deletes an appointment from the API
+  const cancelInterview = (id) => {
+    console.log("Deleting Appointment", id);
+
+    const appointment = {
+      ...state.appointments[id],
+      interview: null,
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+
+    Axios.delete(`/api/appointments/${id}`).then(
+      setState({
+        ...state,
+        appointments,
+      })
+    );
+  };
 
   //create an array of Interviewers for the selected day
   const interviewersArray = getInterviewersForDay(state, state.day);
@@ -86,6 +103,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewersArray}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
