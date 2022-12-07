@@ -51,11 +51,11 @@ const Appointment = (props) => {
 
     props
       .cancelInterview(props.id)
-      .then(() => {
+      .then((res) => {
         transition(EMPTY);
       })
-      .catch(() => {
-        transition(ERROR_DELETE, true);
+      .catch((error) => {
+        transition(ERROR_DELETE);
       });
   };
 
