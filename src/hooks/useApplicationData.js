@@ -80,15 +80,13 @@ const useApplicationData = () => {
     const days = [...state.days];
     days.splice(today, 1, day);
 
-    return Axios.delete(`/api/appointments/${id}`)
-      .then(
-        setState({
-          ...state,
-          appointments,
-          days,
-        })
-      )
-      .catch(setState({ ...state }));
+    return Axios.delete(`/api/appointments/${id}`).then(
+      setState({
+        ...state,
+        appointments,
+        days,
+      })
+    );
   };
 
   //Gets total spots for day
