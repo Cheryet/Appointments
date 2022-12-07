@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 //Mock data for testing
 const fixtures = {
   days: [
