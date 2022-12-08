@@ -1,6 +1,6 @@
 # Scheduler
 
-Scheduler is single page application built using React to create meetings for students to connect with mentors in real time. It offers 5 interviews appointments per day from 12pm to 5pm, Monday - Friday.
+Scheduler is single page application built using React to create meetings for students to connect with mentors in real time. It offers 5 appointments per day from 12pm to 5pm, Monday - Friday.
 
 The user is to click on an empty appointment where they can then proceed to fill out the form to submit their interview spot. Upon completion of the form, the user will have the option to edit or delete their interveiw. During this process the open appointments or 'spots' will update on the list of avalible days.
 
@@ -34,19 +34,19 @@ Install all dependencies with `npm install`
 
 #### Apointments Page
 
-![]()
+![screenshot](https://github.com/Cheryet/Scheduler/blob/master/docs/appointments.png)
 
 #### Booking Appointment
 
-![]()
+![screenshot](https://github.com/Cheryet/Scheduler/blob/master/docs/book-appointment.png)
 
 #### Deleting Appointment
 
-![]()
+![screenshot](https://github.com/Cheryet/Scheduler/blob/master/docs/delete-appointments.png)
 
 #### a GIF for fun 😁
 
-![]()
+![GIF](https://github.com/Cheryet/Scheduler/blob/master/docs/scheduler-app.gif)
 
 ## Note:
 
