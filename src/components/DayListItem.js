@@ -3,11 +3,13 @@ import classNames from "classnames";
 import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
+  //updates day list based on mouse hover/selected/full
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0,
   });
 
+  //updates daylist spots
   const formatSpots = () => {
     if (props.spots === 0) {
       return "no spots remaining";
