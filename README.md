@@ -4,6 +4,8 @@ Scheduler is single page application built using React to create meetings for st
 
 The user is to click on an empty appointment where they can then proceed to fill out the form to submit their interview spot. Upon completion of the form, the user will have the option to edit or delete their interveiw. During this process the open appointments or 'spots' will update on the list of avalible days.
 
+See GIF below for functionality
+
 ## Set up
 
 Install all dependencies with `npm install`
