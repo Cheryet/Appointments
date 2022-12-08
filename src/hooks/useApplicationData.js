@@ -20,9 +20,6 @@ const useApplicationData = () => {
     Promise.all([daysPromise, appointmentPromise, interviewersPromise]).then(
       (all) => {
         //asign states with api data
-        console.log("Days:", all[0].data);
-        console.log("Appointments:", all[1].data);
-        console.log("Interviewers:", all[2].data);
         setState((prev) => ({
           ...prev,
           days: all[0].data,
@@ -47,6 +44,7 @@ const useApplicationData = () => {
       [id]: appointment,
     };
 
+    //updates spots into state
     const [today, spots] = getSpots(state, appointments);
     const day = { ...state.days[today], spots: spots };
     const days = [...state.days];
@@ -75,6 +73,7 @@ const useApplicationData = () => {
       [id]: appointment,
     };
 
+    //updates spots into state
     const [today, spots] = getSpots(state, appointments);
     const day = { ...state.days[today], spots: spots };
     const days = [...state.days];
