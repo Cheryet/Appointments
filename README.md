@@ -32,6 +32,10 @@ Install all dependencies with `npm install`
 
 `npm run storybook`
 
+## Runnig the API server
+
+To populate the scheduler app, first fork and clone [this repo](https://github.com/Cheryet/scheduler-api) and follow the instructions on the README
+
 ## Final Product
 
 #### Apointments Page
@@ -49,7 +53,3 @@ Install all dependencies with `npm install`
 #### a GIF for fun 😁
 
 ![GIF](https://github.com/Cheryet/Scheduler/blob/master/docs/scheduler-app.gif)
-
-## Note:
-
-This project requires external data via the scheduler-api server. Please reach out for more information.
