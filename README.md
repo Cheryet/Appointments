@@ -15,14 +15,18 @@ Install all dependencies with `npm install`
 - axios: 0.20.0
 - classnames: ^2.2.6
 - normalize.css: ^8.0.1
-- react: ^16.9.0
-- react-dom: ^16.9.0
+- react: ^16.14.0
+- react-dom: ^16.14.0
 - react-hooks-testing-library: ^0.6.0
-- react-scripts: 3.0.0
+- react-scripts: 3.4.4
 
 ## Running Webpack Development Server
 
 `npm start`
+
+## Runnig the API server
+
+To populate the scheduler app, first fork and clone [this repo](https://github.com/Cheryet/scheduler-api) and follow the instructions on the README
 
 ## Running Jest test Framework
 
@@ -31,10 +35,6 @@ Install all dependencies with `npm install`
 ## Running Storybook visual tests
 
 `npm run storybook`
-
-## Runnig the API server
-
-To populate the scheduler app, first fork and clone [this repo](https://github.com/Cheryet/scheduler-api) and follow the instructions on the README
 
 ## Final Product
 
