@@ -26,7 +26,7 @@ Install all dependencies with `npm install`
 
 ## Runnig the API server
 
-To populate the scheduler app, first fork and clone [this repo](https://github.com/Cheryet/scheduler-api) and follow the instructions on the README
+To populate the scheduler app, first fork and clone [this repo](https://github.com/Cheryet/scheduler-api) and follow the instructions on the README. Run this server in another terminal window to populate the app.
 
 ## Running Jest test Framework
 
