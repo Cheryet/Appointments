@@ -61,7 +61,7 @@ const Appointment = (props) => {
 
   //Triggers Confirm page
   const onDelete = () => {
-    transition(CONFIRM);
+    transition(CONFIRM, true);
   };
 
   //Triggers Edit page
