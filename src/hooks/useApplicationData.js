@@ -61,8 +61,6 @@ const useApplicationData = () => {
 
   //Ajax DELETE request ~ Deletes an appointment from the API
   const cancelInterview = (id) => {
-    console.log("Deleting Appointment", id);
-
     const appointment = {
       ...state.appointments[id],
       interview: null,
