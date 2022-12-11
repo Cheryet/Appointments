@@ -50,13 +50,13 @@ const useApplicationData = () => {
     const days = [...state.days];
     days.splice(today, 1, day);
 
-    return Axios.put(`/api/appointments/${id}`, appointment).then(
+    return Axios.put(`/api/appointments/${id}`, appointment).then(() => {
       setState({
         ...state,
         appointments,
         days,
-      })
-    );
+      });
+    });
   }
 
   //Ajax DELETE request ~ Deletes an appointment from the API
@@ -77,13 +77,13 @@ const useApplicationData = () => {
     const days = [...state.days];
     days.splice(today, 1, day);
 
-    return Axios.delete(`/api/appointments/${id}`).then(
+    return Axios.delete(`/api/appointments/${id}`).then(() => {
       setState({
         ...state,
         appointments,
         days,
-      })
-    );
+      });
+    });
   };
 
   //Gets total spots for day
