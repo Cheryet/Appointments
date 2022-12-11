@@ -5,7 +5,7 @@ import {
   getAppointmentsForDay,
   getInterviewersForDay,
   getInterview,
-} from "./helpers/selectors";
+} from "../helpers/selectors";
 import useApplicationData from "../hooks/useApplicationData";
 import "components/Application.scss";
 
