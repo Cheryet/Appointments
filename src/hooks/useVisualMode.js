@@ -11,7 +11,7 @@ const useVisualMode = (initial) => {
       return setMode(mode);
     }
     setMode(mode);
-    //adds param to end off history array
+    //adds param to end of history array
     setHistory((prev) => [...prev, mode]);
   };
 
@@ -20,13 +20,13 @@ const useVisualMode = (initial) => {
     if (history.length === 1) {
       return setMode(history[0]);
     }
-
     let newHistory = [...history];
 
     newHistory.pop();
     let index = newHistory.length - 1;
 
     setMode(newHistory[index]);
+    setHistory(newHistory);
   };
 
   return { mode, transition, back };
