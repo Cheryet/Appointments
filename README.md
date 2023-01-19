@@ -1,6 +1,6 @@
-# Scheduler
+# Appointments
 
-Scheduler is single page application built using React to make it easy for students to manage their meetings. With a user-friendly interface and powerful features, Scheduler streamlines the scheduling process, allowing students to see their upcoming meetings and send out requests. It's the perfect tool to make the most of your time.
+Appointments is single page application built using React to make it easy for students to manage their meetings. With a user-friendly interface and powerful features, Appointments streamlines the scheduling process, allowing students to see their upcoming meetings and send out requests. It's the perfect tool to make the most of your time.
 
 The user is to click on an empty appointment where they can then proceed to fill out the form to submit their interview spot. Upon completion of the form, the user will have the option to edit or delete their interveiw. During this process the open appointments or 'spots' will update on the list of avalible days.
 
